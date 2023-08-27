@@ -77,9 +77,12 @@ const player1 = {
     currentPlayer = player1;
     const winnerMessageElements = document.querySelectorAll(".winner-message");
     winnerMessageElements.forEach(element => element.remove());
-   
     
 
+    const diceElements = document.querySelectorAll(".play-post");
+    diceElements.forEach(element => {
+         element.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Dice-0.png/180px-Dice-0.png";
+    });
   }
   
   player1.rollBtn.addEventListener("click", rollDice);
