@@ -12,6 +12,7 @@ const player1 = {
     rollBtn: document.getElementById("roll2"),
   };
 
+  const winnerMessageElement = document.createElement("p");
 
   const diceImages = {
     1: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Alea_1.png",
@@ -40,10 +41,11 @@ const player1 = {
         currentPlayer.rollBtn.disabled = true;
         resetButton.disabled = false;
         const winnerMessage = `${currentPlayer.id} wins!`;
-        const winnerMessageElement = document.createElement("p");
+        // const winnerMessageElement = document.createElement("p");
         winnerMessageElement.style.background = "green";
         winnerMessageElement.style.height = "25px";
         winnerMessageElement.textContent = winnerMessage;
+        winnerMessageElement.className = "winner-message"; // Add a class for styling
         currentPlayer.scoreDisplay.parentElement.appendChild(winnerMessageElement);
         console.log(winnerMessage);
       }else {
@@ -51,6 +53,7 @@ const player1 = {
       toggleCurrentPlayer();
     }
   }
+  
   
 
 //    to toggle the palyer after each time after clicking a button
@@ -72,7 +75,10 @@ const player1 = {
     player2.rollBtn.disabled = true;
     resetButton.disabled = true;
     currentPlayer = player1;
-    const diceImage = diceImages[diceValue];
+    const winnerMessageElements = document.querySelectorAll(".winner-message");
+    winnerMessageElements.forEach(element => element.remove());
+   
+    
 
   }
   
