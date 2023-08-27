@@ -12,7 +12,6 @@ const player1 = {
     rollBtn: document.getElementById("roll2"),
   };
 
-  const winnerMessageElement = document.createElement("p");
 
   const diceImages = {
     1: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Alea_1.png",
@@ -22,16 +21,14 @@ const player1 = {
     5: "https://upload.wikimedia.org/wikipedia/commons/5/55/Alea_5.png",
     6: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Alea_6.png",
   };
-   
-   
+
   const resetButton = document.getElementById("reset");
   let currentPlayer = player1;
 
   function rollDice() {
     const diceValue = Math.floor(Math.random() * 6) + 1;
     const diceImage = diceImages[diceValue];
-    const diceElement = document.getElementById(currentPlayer.id === "player1" ? "dice1" : "dice2");
-    
+    const diceElement = document.getElementById(currentPlayer.id === "player1" ? "dice1" : "dice2");    
     diceElement.src = diceImage;
     
     currentPlayer.score += diceValue;
@@ -41,7 +38,7 @@ const player1 = {
         currentPlayer.rollBtn.disabled = true;
         resetButton.disabled = false;
         const winnerMessage = `${currentPlayer.id} wins!`;
-        // const winnerMessageElement = document.createElement("p");
+        const winnerMessageElement = document.createElement("p");
         winnerMessageElement.style.background = "green";
         winnerMessageElement.style.height = "25px";
         winnerMessageElement.textContent = winnerMessage;
