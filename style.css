@@ -6,7 +6,9 @@ body {
     align-items: center;
     height: 100vh;
     /* background-color: #f0f0f0; */
-    background-color: #c1e7b6;
+    /* background-color: #c1e7b6; */
+    background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 30%, rgba(148,187,233,1) 100%);
   }
   
   .game-container {
